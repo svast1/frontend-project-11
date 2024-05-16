@@ -15,6 +15,13 @@ const config = {
     output: {
         path: path.resolve(__dirname, 'dist'),
     },
+    resolve: {
+        fallback: {
+          "timers": require.resolve("timers-browserify"),
+          "stream": require.resolve("stream-browserify"),
+          "buffer": require.resolve("buffer/")
+        }
+     },     
     plugins: [
         new HtmlWebpackPlugin({
             template: 'index.html',
